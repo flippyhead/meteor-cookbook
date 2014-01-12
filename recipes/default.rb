@@ -7,8 +7,8 @@
 # The base vagrant images currently use chef version 10.14.2. This mean we need apt cookbook ver 1.7.0
 # For more info, see http://community.opscode.com/cookbooks/apt
 include_recipe "apt"
-include_recipe "build-essential"
-include_recipe "nodejs"
+# include_recipe "build-essential"
+# include_recipe "nodejs"
 
 # Install Mongodb
 if node['meteor'] && node['meteor']['install_mongodb']
