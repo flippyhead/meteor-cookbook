@@ -9,8 +9,9 @@ supports "ubuntu"
 supports "debian"
 
 depends "apt"
-depends "build-essential"
-depends "nodejs"
+
+recommends "build-essential"
+recommends "nodejs"
 
 recipe  "meteor", "Main meteor configuration"
 recipe  "meteor::mongodb", "Installs Mongodb"
