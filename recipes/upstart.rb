@@ -1,4 +1,4 @@
-file "/etc/event.d/fetching-app" do
+file "/etc/init/fetching-app.conf" do
   owner 'root'
   group 'root'
   mode 0755
