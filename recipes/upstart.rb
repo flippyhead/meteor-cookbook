@@ -1,7 +1,6 @@
-file "/etc/init/fetching-app.conf" do
-  owner 'root'
-  group 'root'
-  mode 0755
-  content ::File.open("./templates/upstart").read
-  action :create
+template "/etc/init/fetching-app.conf" do
+  source "upstart.erb"
+  mode 0440
+  owner "root"
+  group "root"
 end
