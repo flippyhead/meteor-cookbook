@@ -32,7 +32,8 @@
   },
   "recipes": {
     "meteor": "Installs Meteor",
-    "meteor::mongodb": "Installs Mongodb"
+    "meteor::mongodb": "Installs Mongodb",
+    "meteor::upstart": "Upstart start script"
   },
   "version": "0.1.4"
 }
