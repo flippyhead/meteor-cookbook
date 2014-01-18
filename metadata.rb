@@ -15,4 +15,4 @@ recommends "nodejs"
 
 recipe  "meteor", "Main meteor configuration"
 recipe  "meteor::mongodb", "Installs Mongodb"
-
+recipe  "meteor::upstart", "Installs upstart script for Meteor app"
