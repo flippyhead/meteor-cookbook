@@ -4,19 +4,18 @@ author      "ptb"
 
 start on startup
 stop on shutdown
-respawn
-expect fork
+#respawn
+#expect fork
 
 script
-
-    setuid ubuntu
-    getgid ubuntu
+    setuid 1000
+    getgid 1000
     env MONGO_URL='mongodb://localhost:27017/fetching'
     env ROOT_URL='http://fetching.io'
     env METEOR_SETTINGS=$(cat /home/meteor/settings.json)
     env HOME="/home/meteor"
+    evn PORT=80
     export MONGO_URL ROOT_URL METEOR_SETTINGS HOME
-    echo $$ > /var/run/fetching-app.pid
     exec sudo -u ubuntu /usr/bin/node /home/meteor/bundle/main.js >> /var/log/fetching-app.sys.log 2>&1
 end script
 
