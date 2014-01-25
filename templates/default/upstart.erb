@@ -4,16 +4,15 @@ author      "ptb"
 
 start on startup
 stop on shutdown
-#respawn
-#expect fork
+# respawn
+# expect fork
 
 script
-    env MONGO_URL="mongodb://localhost:27017/fetching"
-    env ROOT_URL="http://fetching.io"
-    env METEOR_SETTINGS="$(cat /home/meteor/settings.json)"
-    env HOME="/home/meteor"
-    env PORT=80
-    export MONGO_URL ROOT_URL METEOR_SETTINGS HOME
+    export MONGO_URL="mongodb://localhost:27017/fetching"
+    export ROOT_URL="http://fetching.io"
+    export METEOR_SETTINGS="$(cat /home/meteor/settings.json)"
+    export HOME="/home/meteor"
+    export PORT="80"
     exec start-stop-daemon --start -c ubuntu --exec /usr/bin/node /home/meteor/bundle/main.js >> /var/log/fetching-app.sys.log 2>&1
 end script
 
