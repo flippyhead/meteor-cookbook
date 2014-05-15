@@ -5,7 +5,7 @@ author      "ptb"
 start on startup
 stop on shutdown
 # respawn
-# expect fork
+expect fork
 
 script
     export MONGO_URL="mongodb://localhost:27017/fetching"
